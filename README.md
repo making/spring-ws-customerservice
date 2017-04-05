@@ -2,7 +2,7 @@
 
 This sample shows how to configure the project to produce SOAP Web service using Spring Web Services from existing WSDL ([CustomerService.wsdl](http://cxf.apache.org/docs/defining-contract-first-webservices-with-wsdl-generation-from-java.data/CustomerService.wsdl) of [Apache CXF's example](http://cxf.apache.org/docs/defining-contract-first-webservices-with-wsdl-generation-from-java.html)).
 
-If you prefer JSR-310, check [jsr-310](tree/jsr-310) branch.
+If you prefer JSR-310, check [jsr-310](https://github.com/making/spring-ws-customerservice/tree/jsr-310) branch.
 
 ## Generate sources
 
@@ -41,4 +41,17 @@ You'll receive (not formatted):
         </ns3:getCustomersByNameResponse>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
+```
+
+## Deploy to Cloud Foundry
+
+```
+./mvnw clean package
+cf push customer-ws -p target/customerservice-0.0.1-SNAPSHOT.jar -m 1g
+```
+
+Try!!
+
+```
+curl -H 'Content-Type: text/xml' -d @request.xml https://customer-ws.cfapps.io
 ```
