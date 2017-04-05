@@ -6,6 +6,14 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
         jaxb:extensionBindingPrefixes="xjc annox"
         version="2.1">
+
+    <jaxb:globalBindings>
+        <jaxb:javaType name="java.time.LocalDate"
+                       xmlType="xs:dateTime"
+                       parseMethod="com.example.customerservice.LocalDateAdapter.parse"
+                       printMethod="com.example.customerservice.LocalDateAdapter.print"/>
+    </jaxb:globalBindings>
+
     <jaxb:bindings schemaLocation="CustomerService.wsdl" node="//xs:schema">
         <jaxb:bindings node="xs:complexType[@name='getCustomersByName']">
             <annox:annotate>

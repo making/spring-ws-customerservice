@@ -3,6 +3,7 @@ package com.example.customerservice;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class CustomerService {
         customer.setType(CustomerType.BUSINESS);
         customer.setRevenue(10000);
         customer.setTest(BigDecimal.ZERO);
+        customer.setBirthDate(LocalDate.of(2000, 1,1));
         return Collections.singletonList(customer);
     }
 }
