@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:tns="http://customerservice.example.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tns:getCustomersByName>
+            <name>maki</name>
+        </tns:getCustomersByName>
+    </soapenv:Body>
+</soapenv:Envelope>
